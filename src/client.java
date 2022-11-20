@@ -6,9 +6,10 @@ public class client {
 
     private String nom; 
     private String prenom;
+    private String card;
 
     public client() {}  
-    public client(String nom, String prenom) {  
+    public client(String nom, String prenom, String card) {  
 
         this.nom = nom;     
         this.prenom = prenom;                                                      
@@ -26,13 +27,12 @@ public class client {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-
-    //Create scanner object and read the value from the console  
-    Scanner sc = new Scanner(System.in);  
-    
-    // Vermeil
-	//System.out.println("Veuillez entrer une ville de sejour");
-	String ville = sc.next();
+    public String getCard() {
+        return card;
+    }
+    public void setCard(String card) {
+        this.card = card;
+    }
 }
 
 

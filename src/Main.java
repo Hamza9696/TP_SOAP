@@ -1,5 +1,6 @@
 
 import java.util.ArrayList; // import the ArrayList class
+import java.util.Scanner;  // Import the Scanner class
 
 
 public class Main {
@@ -63,6 +64,26 @@ public class Main {
         System.out.println(h1.toString()); 
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||"); 
         System.out.println(hotels.get(1).toString()); 
+
+        Scanner myObj = new Scanner(System.in);
+
+        System.out.println("Une ville de séjour, une date d’arrivée, une date de départ, un intervalle de prix souhaité, une catégorie d’hôtel : nombre d’étoiles, le nombre de personnes à héberger : ");
+
+        // String input
+        String ville = myObj.nextLine();
+
+        // Numerical input
+        int dateArr = myObj.nextInt();
+        int dateDep = myObj.nextInt();
+
+        // Output input by user
+        System.out.println("ville de sejour: " + ville);
+        System.out.println("dateArrive: " + dateArr);
+        System.out.println("dateDepart: " + dateDep);
+
+
+
+
 } 
 
 }
