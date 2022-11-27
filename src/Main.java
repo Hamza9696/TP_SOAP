@@ -1,5 +1,6 @@
 
 import java.util.ArrayList; // import the ArrayList class
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;  // Import the Scanner class
 import java.text.SimpleDateFormat;  
@@ -51,15 +52,18 @@ public class Main {
         adresse adr2 = new adresse("Madrid", "Tonella", 25);
 
         h2.setAdress(adr2);
-
-
-        //hotel h2 = new hotel("Cordoba", 3, {"10m","12m");
+        
+        adresse adr3 = new adresse("Porto", "Siui", 17);
+        //// initialize ArrayList directly with .asList /////////
+        ArrayList<String> ch3 = new ArrayList<>(Arrays.asList("9m", "12m", "14m"));
+        hotel h3 = new hotel("Nervana", 3, 40, ch3, adr3);
         //hotel h3 = new hotel("Cesar", 5, ["9m","12m","15m","20m"]);
         //hotel h4 = new hotel("Iberia", 2, ["9m"]);
 
         // -----------------add hotel to the ArrayList hotels
                 hotels.add(h1);
                 hotels.add(h2);
+                hotels.add(h3);
 
         System.out.println(hotels.get(0).toString()); 
         System.out.println("//////////////////////////////////////////"); 
