@@ -1,24 +1,25 @@
+import java.util.Date;  
 
 public class reservation {
 	
-	  private int dateArrive;  
-	  private int dateDepart;  
+	  private Date dateArrive;  
+	  private Date dateDepart;  
 	  
 		public reservation() {}  
-		public reservation(int dateArrive, int dateDepart) {  
+		public reservation(Date dateArrive, Date dateDepart) {  
 			this.dateArrive = dateArrive;                                                          
 		     this.dateDepart = dateDepart;
 		}
-		public int getDateArrive() {
+		public Date getDateArrive() {
 			return dateArrive;
 		}
-		public void setDateArrive(int dateArrive) {
+		public void setDateArrive(Date dateArrive) {
 			this.dateArrive = dateArrive;
 		}
-		public int getDateDepart() {
+		public Date getDateDepart() {
 			return dateDepart;
 		}
-		public void setDateDepart(int dateDepart) {
+		public void setDateDepart(Date dateDepart) {
 			this.dateDepart = dateDepart;
 		} 
 

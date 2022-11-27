@@ -1,10 +1,12 @@
 
 import java.util.ArrayList; // import the ArrayList class
+import java.util.Date;
 import java.util.Scanner;  // Import the Scanner class
-
+import java.text.SimpleDateFormat;  
+import java.text.ParseException; 
 
 public class Main {
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws ParseException { 
 
         ArrayList<hotel> hotels = new ArrayList<hotel>();
 
@@ -66,24 +68,59 @@ public class Main {
         System.out.println(hotels.get(1).toString()); 
 
         Scanner myObj = new Scanner(System.in);
-
+        System.out.println("---------------------------------------------");  
         System.out.println("Une ville de séjour, une date d’arrivée, une date de départ, un intervalle de prix souhaité, une catégorie d’hôtel : nombre d’étoiles, le nombre de personnes à héberger : ");
 
         // String input
         String ville = myObj.nextLine();
 
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
         // Numerical input
-        int dateArr = myObj.nextInt();
-        int dateDep = myObj.nextInt();
+        String dateArr = myObj.nextLine();
+        String dateDep = myObj.nextLine();
+        Date dateArrive = sdf.parse(dateArr);  
+        Date dateDepart = sdf.parse(dateDep); 
+        double max = myObj.nextDouble();
+        double min = myObj.nextDouble();
+        int stars = myObj.nextInt();
+        int nbPersons = myObj.nextInt();
+
+
+
+
 
         // Output input by user
-        System.out.println("ville de sejour: " + ville);
-        System.out.println("dateArrive: " + dateArr);
-        System.out.println("dateDepart: " + dateDep);
+        System.out.println("ville de sejour : " + ville);
+        //System.out.println("dateArrive : " + dateArrive);
+        //System.out.println("dateDepart : " + dateDepart);
+                    ////// Formated date
+        System.out.println("Date ARRIVE: " + sdf.format(dateArrive));  
+        System.out.println("Date DEPART: " + sdf.format(dateDepart)); 
+        /////////////
+                    ////// Compare date
+        if(dateArrive.compareTo(dateDepart) < 0)   
+        {  
+        System.out.println("dateArrive comes before dateDepart");  
+        }   
+        /////////////////////
+        System.out.println("Prix max : " + max);
+        System.out.println("Prix min : " + min);
+        System.out.println("Stars: " + stars);
+        System.out.println("Nombre de personnes: " + nbPersons);
 
-
-
-
+        for (hotel h : hotels) {
+            System.out.println(h.getAdress().toString());
+            
+          }
+        
+        //utilisateur de saisir les informations suivantes : Une ville de séjour, une date d’arrivée, 
+        //une date de départ, un intervalle de prix souhaité, 
+        //une catégorie d’hôtel : nombre d’étoiles, le nombre de personnes à héberger.
+        /////////////////
+        //Enréponse, l’application lui retourne une liste d’hôtels qui répondent à ses critères et où pour chaque hôtel les informations suivantes 
+        //sont affichées : nom de l’hôtel, adresse de l’hôtel (pays, ville, rue, numéro, lieu-dit, position GPS), le prix à payer, nombre d’étoile, nombre de lits proposés
+            
 } 
 
 }
